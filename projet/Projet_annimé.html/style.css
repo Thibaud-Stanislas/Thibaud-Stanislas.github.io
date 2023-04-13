@@ -1,0 +1,334 @@
+:root {
+    --color1: rgb(165, 158, 158);
+    --color2: yellow;
+    --color3: rgb(0, 0, 255);
+    --color4: green;
+    --color5: rgb(48, 207, 208);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url(bg.jpg) no-repeat center/cover;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--color1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.card {
+    background: rgba(0, 0, 0, 0.507);
+    width: 100%;
+    box-shadow: ;
+    margin-left: 25px;
+    margin-right: 25px;
+    padding: 20px 20px 6px;
+    box-shadow: -5px 9px 12px 2px black;
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+}
+
+.card:before {
+    content: "\2730";
+    position: absolute;
+    top: 14px;
+    right: 20px;
+    font-size: 2.4rem;
+}
+
+h1 {
+    margin-bottom: 24px;
+    position: relative;
+    transform: scaleY(0);
+    animation: h1 6s ease-in-out forwards;
+}
+
+@keyframes h1 {
+    100% {
+        transform: scaleY(1);
+    }
+
+}
+
+h1::after {
+    content: "";
+    position: absolute;
+    background: rgb(100, 38, 100);
+    height: 1px;
+    width: 100%;
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    animation: h1annim 6s ease-in-out forwards;
+    transform-origin: center;
+}
+
+@keyframes h1annim {
+    100% {
+        transform: translateX(-50%) scaleX(1);
+    }
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+.polygon-container {
+    filter: drop-shadow(-1px 10px 3px var(--color5));
+    width: 100px;
+    place-self: center left;
+
+}
+
+.polygon {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    height: 100px;
+    transform: scale(0);
+    animation: polygone 6s ease-in-out forwards;
+}
+
+@keyframes polygone {
+    100% {
+        transform: scale(1);
+    }
+}
+
+.polygon:after {
+    content: "un texte";
+    position: absolute;
+    color: var(--color2);
+    background: black;
+    margin-top: 40px;
+    margin-left: 0px;
+    width: 100px;
+    text-align: center;
+    transform: rotate(353deg);
+}
+
+p {
+    line-height: 26px;
+    margin: 20px 0;
+    display: -webkit-inline-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    text-align: justify;
+}
+
+p::selection {
+    background: #313c8f;
+}
+
+.checkbox-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0px 30px;
+    perspective: 30px;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked+label {
+    background: linear-gradient(0deg, rgba(48, 207, 208, 1) 0%, rgba(51, 8, 103, 1) 100%);
+    color: var(--color2);
+    transform: scale(1.1);
+}
+
+label {
+    cursor: pointer;
+    border: 1px solid rgb(100, 38, 100);
+    user-select: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.2s;
+    background: rgb(16, 15, 15);
+}
+
+label:first-of-type:hover {
+    animation: label1 1s infinite linear;
+}
+
+@keyframes label1 {
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1)
+    }
+
+}
+
+label:nth-child(4):hover {
+    animation: label2 3s infinite linear;
+}
+
+@keyframes label2 {
+    33% {
+        transform: translateZ(30px);
+    }
+
+    66% {
+        transform: translateZ(-40px);
+    }
+
+    100% {
+        transform: translateZ(0);
+    }
+}
+
+.e-mail {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.e-mail input {
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 3px solid;
+    transition: 0.3s;
+    text-align: center;
+    font-size: 1.1rem;
+    color: rgb(100, 38, 100);
+}
+
+input[type="text"]:focus {
+    background: transparent;
+    border: 3px solid;
+    border-radius: 150px;
+}
+
+input[type="text"]::placeholder {
+    color: #313c8f;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+button:active {
+    transform: scale(1.2);
+    background: yellow;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: rgb(100, 38, 100);
+    font-size: 1.3rem;
+    padding: 10px 20px;
+    border-radius: 150px;
+    margin: 0 auto;
+    display: block;
+    transition: 0.1;
+}
+
+button:hover {
+    letter-spacing: 3px;
+}
+
+button:hover+a,
+a:hover {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+a {
+    color: rgb(165, 158, 158);
+    text-align: center;
+    display: block;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.3s;
+    visibility: hidden;
+}
+
+a:visited {
+    color: grey;
+}
+
+img {
+    height: 40px;
+    position: absolute;
+    filter: drop-shadow(0px 6px 3px rgba(255, 255, 0, 0.6));
+    z-index: -1;
+    animation: spaceship 60s infinite linear;
+}
+
+@keyframes spaceship {
+    0% {
+        top: 2%;
+        left: 2%;
+        transform: rotate(90deg);
+    }
+
+    10% {
+        top: 6%;
+        left: 30%;
+        transform: rotate(95deg);
+    }
+
+    20% {
+        top: 9%;
+        left: 60%;
+        transform: rotate(60deg);
+    }
+
+    30% {
+        top: 0%;
+        left: 80%;
+        transform: rotate(90deg);
+    }
+
+    40% {
+        top: 20%;
+        left: 120%;
+        transform: rotate(110deg);
+    }
+
+    50% {
+        top: 50%;
+        left: 80%;
+        transform: rotate(323deg);
+    }
+
+    60% {
+        top: 90%;
+        left: 90%;
+        transform: rotate(256deg);
+    }
+
+    70% {
+        top: 110%;
+        left: 50%;
+        transform: rotate(237deg);
+    }
+
+    80% {
+        top: 85%;
+        left: 30%;
+        transform: rotate(323deg);
+    }
+
+    90% {
+        top: 50%;
+        left: 15%;
+        transform: rotate(350deg);
+    }
+
+    100% {
+        top: 2%;
+        left: 2%;
+        transform: rotate(90deg);
+    }
+}
