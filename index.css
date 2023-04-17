@@ -349,7 +349,7 @@ footer{
   width: 80%;
   height: 442px;
 }
-#projet{
+.projet{
   flex-direction: column;
 
 }
@@ -372,6 +372,10 @@ footer{
 }
 
 }
+@media all and (max-width: 1000px){
+
+}
+
 @media all and (max-width: 860px){
 #grid #text{
   height: 80%;
@@ -392,5 +396,22 @@ footer{
   #grid #text p{
     font-size: 12px;
   }
+  .titre{
+    font-size: 12px;
   }
-
+  .text_projet{
+    font-size: 16px;
+  }
+  .text_projet2{
+    font-size: 16px;
+  }
+  .displayNone{
+    display: none;
+  }
+  header nav #header ul li {
+    display: none;
+  }
+  h1{
+    margin-top: 20px;
+  }
+}
