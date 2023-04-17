@@ -332,3 +332,11 @@ img {
         transform: rotate(90deg);
     }
 }
+@media all and (max-width: 615px){
+    .polygon {
+        display: none;
+    }
+    .grid-container{
+        grid: none;
+    }
+}
